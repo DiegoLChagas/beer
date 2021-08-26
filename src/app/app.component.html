@@ -1,15 +1,19 @@
 <div class="container">
-  <div *ngFor="let item of response.articles"> 
+  <div *ngFor="let item of beer"> 
       <div class="card" style="width: 18rem;">
           <img class="card-img-top" 
-          src="{{ item.urlToImage }}" 
+          src="{{ item.image_url }}" 
           alt="Imagem de capa do card">
           <div class="card-body">
-            <h5 class="card-title">{{ item.title }}</h5>
+            <h5 class="card-title">{{ item.id }}</h5>
+            <h5 class="card-title">{{ item.name }}</h5>
+            <p class="card-text">{{ item.tagline }}
+              <p class="card-text">{{ item.first_brewed }}  
             <p class="card-text">{{ item.description }}
-  
+              <p class="card-text">ABV: {{ item.abv }}
+                <p class="card-text">IBU:{{ item.ibu }}
             </p>
-            <a href="{{ item.url }}" class="btn btn-primary" target="_blank">Visitar</a>
+            <a href="{{ 'item.url' }}" class="btn btn-primary" target="_blank">Visitar</a>
           </div>
       </div>
   

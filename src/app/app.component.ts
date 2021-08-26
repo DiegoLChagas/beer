@@ -1,6 +1,7 @@
+import { Beer } from './beer';
 import { Component } from '@angular/core';
 import { DataService } from './data.service';
-import { Response } from './response';
+// import { Response } from './response';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { Response } from './response';
 })
 export class AppComponent {
   title = 'beer';
-  response : Response = new Response;
+  beer : Beer[] = [];
 
   constructor (private dataservice : DataService) {
 
@@ -18,7 +19,7 @@ export class AppComponent {
   ngOnInit(): void {
     this.dataservice.getBeer().subscribe((data) =>{
       console.log(data);
-      this.response = data;
+      this.beer = data;
     })
   }
 }
